@@ -1,0 +1,261 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #0d0e14;
+  color: #f5f4f8;
+  font-family: Pretendard, SUIT, "Noto Sans KR", Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+::selection {
+  background: rgba(183, 164, 255, 0.32);
+  color: #f5f4f8;
+}
+
+@layer components {
+  .section-shell {
+    @apply border-t border-line px-5 py-20 sm:px-8 lg:py-[110px];
+    background:
+      radial-gradient(circle at 90% 0%, rgba(88, 76, 150, 0.055), transparent 30%),
+      #0d0e14;
+  }
+
+  .section-soft {
+    background:
+      radial-gradient(circle at 12% 0%, rgba(70, 80, 130, 0.06), transparent 32%),
+      #11111a;
+  }
+
+  .eyebrow {
+    @apply text-[13px] font-bold text-accent sm:text-sm;
+    letter-spacing: 0.04em;
+  }
+
+  .hero-title {
+    @apply text-primary;
+    max-width: 760px;
+    font-size: clamp(1.9rem, 3.6vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.18;
+    letter-spacing: -0.03em;
+  }
+
+  .section-title {
+    @apply flex flex-col text-title;
+    font-size: clamp(1.875rem, 3.6vw, 3rem);
+    font-weight: 800;
+    line-height: 1.18;
+    letter-spacing: -0.03em;
+  }
+
+  .section-title-center {
+    @apply items-center;
+  }
+
+  .section-title-kicker {
+    @apply mb-3 text-body;
+    font-size: clamp(1.2rem, 1.9vw, 1.65rem);
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -0.02em;
+  }
+
+  .button-primary {
+    @apply inline-flex min-h-12 items-center justify-center rounded-full bg-primary px-6 text-sm font-bold text-ink transition hover:bg-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-ink;
+  }
+
+  .button-secondary {
+    @apply inline-flex min-h-12 items-center justify-center rounded-full border border-white/10 px-6 text-sm font-bold text-primary transition hover:border-accent hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-ink;
+  }
+
+  .content-block {
+    @apply max-w-[620px] space-y-5 text-body-large;
+  }
+
+  .text-body-large {
+    color: #c8c6d1;
+    font-size: clamp(1rem, 1.45vw, 1.2rem);
+    line-height: 1.75;
+  }
+
+  .text-body-base {
+    font-size: clamp(0.94rem, 1.15vw, 1.05rem);
+    line-height: 1.75;
+  }
+
+  .text-label {
+    font-size: clamp(0.78rem, 0.86vw, 0.84rem);
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+
+  .surface-card {
+    @apply relative flex min-h-[250px] flex-col overflow-hidden rounded-[24px] border border-white/[0.08] bg-white/[0.035] p-6 shadow-violet transition duration-300 hover:border-white/15 sm:p-7;
+    background-image:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03)),
+      radial-gradient(circle at 18% 0%, rgba(96, 98, 132, 0.04), transparent 42%),
+      linear-gradient(145deg, rgba(20, 21, 34, 0.7), rgba(17, 17, 26, 0.35));
+  }
+
+  .surface-card::after,
+  .product-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    background: linear-gradient(180deg, rgba(255,255,255,0.08), transparent 42%);
+    opacity: 0.34;
+  }
+
+  .card-index {
+    @apply text-[13px] font-bold text-accent;
+  }
+
+  .card-label {
+    @apply rounded-full border border-white/10 px-3 py-1 text-xs font-bold text-muted;
+  }
+
+  .text-card-title {
+    font-size: clamp(1.25rem, 1.55vw, 1.5rem);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+  }
+
+  .card-body {
+    @apply max-w-[28rem] text-body;
+    font-size: clamp(1rem, 1.05vw, 1.06rem);
+    line-height: 1.65;
+  }
+
+  .product-card {
+    @apply relative flex min-h-[360px] flex-col overflow-hidden rounded-[24px] border border-white/[0.08] bg-white/[0.035] p-7 shadow-violet transition duration-300 hover:border-white/15;
+    background-image:
+      linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03)),
+      radial-gradient(circle at 82% 14%, rgba(96, 98, 132, 0.045), transparent 38%),
+      linear-gradient(150deg, rgba(20, 21, 34, 0.64), rgba(17, 17, 26, 0.4));
+  }
+
+  .product-line {
+    @apply mb-6 h-px w-full bg-gradient-to-r from-muted/55 via-white/10 to-transparent;
+  }
+
+  .product-meta {
+    @apply shrink-0 rounded-full border border-white/10 px-2.5 py-1 text-[11px] font-bold text-muted;
+    white-space: nowrap;
+  }
+
+  .product-title {
+    @apply mt-7 font-bold text-primary;
+    font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+  }
+
+  .product-copy {
+    @apply mt-5 max-w-[22rem] text-body;
+    font-size: clamp(0.98rem, 1vw, 1.05rem);
+    line-height: 1.65;
+  }
+
+  .product-status {
+    @apply inline-flex rounded-full border border-white/10 bg-white/[0.035] px-3 py-1.5 text-xs font-bold text-muted;
+  }
+
+  .validation-row {
+    @apply grid items-center gap-3 rounded-[18px] border border-white/[0.08] bg-white/[0.035] px-5 py-4 text-body shadow-violet transition duration-300 hover:border-white/15 sm:grid-cols-[2.5rem_5rem_1fr];
+    background-image:
+      linear-gradient(180deg, rgba(255,255,255,0.052), rgba(255,255,255,0.026)),
+      radial-gradient(circle at 0% 0%, rgba(183,164,255,0.03), transparent 36%);
+  }
+
+  .validation-number {
+    @apply text-[13px] font-bold text-accent;
+  }
+
+  .validation-label {
+    @apply text-xs font-bold text-subtle;
+  }
+
+  .validation-title {
+    @apply text-base font-semibold leading-7 text-title sm:text-[17px];
+  }
+
+  .validation-meta {
+    @apply ml-3 inline-flex align-middle text-xs font-bold text-muted;
+  }
+
+  .feature-band {
+    @apply grid gap-8 border-y border-line py-9 lg:grid-cols-[0.62fr_1fr];
+  }
+
+  .feature-copy {
+    @apply flex max-w-[820px] flex-col text-title;
+    font-size: clamp(1.16rem, 1.62vw, 1.48rem);
+    font-weight: 650;
+    line-height: 1.65;
+    letter-spacing: -0.02em;
+  }
+
+  .feature-copy strong {
+    @apply font-bold text-accent;
+  }
+
+  .contact-section {
+    @apply relative border-t border-line py-20 lg:py-[100px];
+    background: #11111a;
+  }
+
+  .contact-graphic {
+    @apply absolute inset-0;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(183, 164, 255, 0.075), transparent 28%),
+      linear-gradient(180deg, rgba(255,255,255,0.014), transparent 46%);
+  }
+
+  .contact-title {
+    @apply mx-auto mt-4 flex max-w-[620px] flex-col text-title;
+    font-size: clamp(1.9rem, 3.2vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.18;
+    letter-spacing: -0.03em;
+  }
+
+  .button-compact {
+    @apply min-h-11 px-5;
+  }
+
+  .company-info {
+    @apply max-w-[520px] border-t border-line pt-6 text-sm leading-7 text-footer;
+  }
+
+  .company-info a {
+    @apply transition hover:text-accent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}

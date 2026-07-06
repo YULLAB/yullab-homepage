@@ -276,11 +276,11 @@ export default function Home() {
               사업 제휴, 투자 문의, 연구 협력, 제품 도입에 대해 편하게 연락해 주세요.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <a className="button-primary button-compact" href="mailto:hello@yullab.co.kr">
+              <a className="button-primary button-compact" href="mailto:team@yullab.co.kr">
                 문의하기
               </a>
-              <a className="text-sm font-semibold text-primary transition hover:text-accent" href="mailto:hello@yullab.co.kr">
-                hello@yullab.co.kr
+              <a className="text-sm font-semibold text-primary transition hover:text-accent" href="mailto:team@yullab.co.kr">
+                team@yullab.co.kr
               </a>
             </div>
           </div>
@@ -294,8 +294,8 @@ export default function Home() {
             <p>경기도 성남시</p>
             <p>사업자등록번호 714-87-01958</p>
             <p>
-              <a className="transition hover:text-accent" href="mailto:hello@yullab.co.kr">
-                hello@yullab.co.kr
+              <a className="transition hover:text-accent" href="mailto:team@yullab.co.kr">
+                team@yullab.co.kr
               </a>
             </p>
           </div>

@@ -26,4 +26,4 @@ npm run build
 
 Vercel에서 이 폴더를 프로젝트 루트로 선택한 뒤 기본 설정 그대로 배포할 수 있습니다.
 
-문의 이메일은 `hello@yullab.co.kr`로 설정되어 있습니다.
+문의 이메일은 `team@yullab.co.kr`로 설정되어 있습니다.

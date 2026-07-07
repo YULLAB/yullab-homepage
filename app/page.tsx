@@ -98,6 +98,9 @@ export default function Home() {
                 문의하기
               </a>
             </div>
+            <a className="hero-sub-link" href="#products">
+              ESE 기반 제품 플랫폼 SORI:ON 보기 →
+            </a>
           </div>
 
           <div className="hidden lg:block">

@@ -84,6 +84,10 @@ body {
     @apply inline-flex min-h-12 items-center justify-center rounded-full border border-white/10 px-6 text-sm font-bold text-primary transition hover:border-accent hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-ink;
   }
 
+  .hero-sub-link {
+    @apply mt-5 inline-flex text-sm font-semibold text-muted transition hover:text-accent;
+  }
+
   .content-block {
     @apply max-w-[620px] space-y-5 text-body-large;
   }

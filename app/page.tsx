@@ -5,68 +5,104 @@ import { WaveMark } from "@/components/wave-mark";
 
 const SORI_ON_URL = "https://sori-on.com";
 
-const techCards = [
+const pipelineSteps = [
   {
-    title: "호흡과 압력 분석",
-    point: "Breath",
-    body: "호흡의 밀도, 압력 변화, 긴장과 이완의 흐름을 시간축 위에서 분석합니다."
+    number: "01",
+    label: "INPUT",
+    title: "표현 신호 입력",
+    body: "텍스트, 음성, 기준 퍼포먼스 안에 담긴 표현 단서를 읽어옵니다."
   },
   {
-    title: "표현 타이밍 감지",
-    point: "Timing",
-    body: "어미 처리, 미세한 당김과 늦춤, 길이 변화처럼 표현을 만드는 타이밍을 읽습니다."
+    number: "02",
+    label: "INTERPRET",
+    title: "표현 흐름 해석",
+    body: "표현을 감정 이름이 아니라, 시간축 위에서 움직이는 변화 구조로 해석합니다."
   },
   {
-    title: "감정 흐름 분석",
-    point: "Flow",
-    body: "감정을 하나의 라벨이 아니라 소리 안에서 움직이는 변화의 궤적으로 다룹니다."
+    number: "03",
+    label: "STRUCTURE",
+    title: "표현 구조화",
+    body: "읽어낸 표현 흐름을 비교·분석·생성에 연결할 수 있는 표현 파라미터 구조로 변환합니다."
   },
   {
-    title: "피드백과 생성 확장",
-    point: "Engine",
-    body: "기준 음원과 사용자 음원을 비교해 연습 방향을 제안하고 생성 엔진으로 확장합니다."
+    number: "04",
+    label: "APPLY",
+    title: "분석과 생성에 적용",
+    body: "구조화된 표현값을 비교 분석, 피드백, TTS/AI Voice 생성까지 연결합니다."
   }
 ];
 
-const products = [
+const businessCards = [
   {
-    name: "VOXGO",
-    label: "AI 보컬 코치",
-    mark: "01",
-    meta: "2026.7월 출시예정",
-    status: "각 악기로 확장 진행중",
+    title: "VOXGO · PansoriGo · Instrument Apps",
+    label: "Analysis Products",
+    metaLabel: "적용 분야",
+    metaValue: "보컬 · 국악 · 악기 분석",
+    modelLabel: "Business Model",
+    modelValue: "B2C 앱 구독 · 교육/기관용 B2B",
     lines: [
-      "기준 보컬과 사용자의 노래를 비교해 호흡, 톤, 흐름, 표현을 분석하는 AI 보컬 코칭 앱입니다."
+      "ESE 기반으로 기준 음원과 사용자 음원을 비교하고, 표현 차이를 분석해 연습·학습·코칭으로 연결하는 분석형 제품군입니다.",
+      "보컬과 국악을 시작으로 피아노·기타·바이올린 등 각 악기 학습 도구로 확장됩니다."
     ]
   },
   {
-    name: "PansoriGo",
-    label: "AI 국악 보컬 학습 도구",
-    mark: "02",
-    meta: "2025년 10월 출시",
-    status: "국악 AI 교육앱",
+    title: "Emotion Voice / AI Voice Generation",
+    label: "Expressive Voice Engine",
+    metaLabel: "적용 분야",
+    metaValue: "TTS · NPC · 오디오북 · Companion",
+    modelLabel: "Business Model",
+    modelValue: "B2B API · SDK · 엔터프라이즈 라이선스",
     lines: [
-      "시김새와 비정형 발성 분석을 바탕으로 한국 전통 성악의 표현을 학습하고 비교할 수 있는 도구입니다."
+      "LLM이 해석한 감정 구조를 실제 음성 표현으로 바꾸는 ESE 기반 생성 엔진입니다.",
+      "TTS, 오디오북, 게임 NPC, AI Companion 등 표현이 필요한 음성 서비스에 적용됩니다."
     ]
   },
   {
-    name: "Expressive AI Engine",
-    label: "B2B / API 솔루션",
-    mark: "03",
-    meta: "Engine Platform",
-    status: "API, SDK 고도화중.",
+    title: "SORI:ON",
+    label: "SORI:ON Platform",
+    metaLabel: "Role",
+    metaValue: "분석 앱 허브",
+    modelLabel: "Business Model",
+    modelValue: "플랫폼 연동 · 서비스 허브",
+    isPlatform: true,
     lines: [
-      "보컬, 악기, 게임 NPC, 오디오북, AI Companion, Human AI로 확장 가능한 표현 AI 엔진입니다."
+      "율랩의 ESE 기반 분석 앱과 도구를 연결하는 표현 분석 플랫폼입니다.",
+      "VOXGO, PansoriGo, 이후 확장될 악기 분석 앱들이 이 구조 안에서 연결됩니다."
     ]
   }
 ];
 
 const validation = [
-  { number: "01", label: "Core", title: "비정형 소리 분석 기술" },
-  { number: "02", label: "IP", title: "시김새·표현음 분석 특허", meta: "국내 3 · 미국 1 출원완료" },
-  { number: "03", label: "Research", title: "한국 전통음악 AI 연구" },
-  { number: "04", label: "Scale", title: "보컬·악기·음성 분석 확장" },
-  { number: "05", label: "Data", title: "실제 음원 비교 분석 구조" }
+  {
+    number: "01",
+    label: "Core",
+    title: "비정형 소리 분석 구조",
+    body: "음정·박자 중심이 아닌 표현 단위 분석"
+  },
+  {
+    number: "02",
+    label: "IP",
+    title: "표현 분석 IP 포트폴리오",
+    body: "국내·미국 특허 기반 / 표현음·비정형 소리 분석"
+  },
+  {
+    number: "03",
+    label: "Research",
+    title: "표현 분석 연구 검증",
+    body: "비정형 발성·표현 변화 분석 기반"
+  },
+  {
+    number: "04",
+    label: "Scale",
+    title: "보컬·악기·음성 확장 구조",
+    body: "장르를 넘는 표현 분석 엔진 구조"
+  },
+  {
+    number: "05",
+    label: "Data",
+    title: "실제 음원 비교 분석 시스템",
+    body: "기준 음원과 사용자 음원을 비교 가능한 구조"
+  }
 ];
 
 export default function Home() {
@@ -112,45 +148,55 @@ export default function Home() {
       <Section id="problem" eyebrow="Problem" tone="soft">
         <div className="grid gap-10 lg:grid-cols-[0.86fr_1fr] lg:gap-20">
           <h2 className="section-title max-w-[620px]">
-            <span className="section-title-kicker">오디오 AI는 소리를 인식합니다. 하지만,</span>
-            <span className="text-accent">율랩은 소리의 표현을 이해합니다.</span>
+            <span className="problem-title-lead">오디오 AI는 소리를 인식합니다.</span>
+            <span className="text-accent">율랩은 소리의 표현 구조를 읽습니다.</span>
           </h2>
           <div className="content-block">
             <p>
-              많은 오디오 AI는 음정, 박자, 템포, 볼륨처럼 측정하기 쉬운 정보를 잘
-              읽어냅니다. 하지만 사람이 노래하고 말할 때 감정이 전달되는 지점은 더
-              섬세한 층위에 있습니다.
+              <span className="block">기존 오디오 AI는 음정, 박자, 템포, 볼륨처럼</span>
+              <span className="block">수치화하기 쉬운 정보를 잘 읽어냅니다.</span>
+              <span className="mt-3 block">하지만 사람이 노래하고 말할 때 감정이 전달되는 지점은</span>
+              <span className="block">그보다 더 미세한 표현의 구조와 흐름에 있습니다.</span>
             </p>
             <p>
-              호흡의 흔들림, 소리의 압력, 긴장과 이완, 어미의 방향, 감정의 변화.
-              율랩은 이 보이지 않는 소리의 움직임을 분석 가능한 데이터로 바꿉니다.
+              <span className="block">율랩은 이 보이지 않는 표현 구조를</span>
+              <span className="block">분석 가능한 데이터로 바꾸고,</span>
+              <span className="block">이를 비교·피드백·생성까지 연결되는</span>
+              <span className="block">표현 AI 인프라로 확장합니다.</span>
             </p>
           </div>
         </div>
       </Section>
 
       <Section id="technology" eyebrow="Technology">
-        <div className="grid gap-12 lg:grid-cols-[0.78fr_1fr] lg:gap-16">
+        <div className="grid gap-12 lg:grid-cols-[0.9fr_0.88fr] lg:gap-16">
           <div>
             <h2 className="section-title max-w-[560px]">
-              <span>ESE는 소리의 표현을</span>
-              <span className="text-accent">데이터로 읽습니다</span>
+              <span className="problem-title-lead">ESE는 소리의 표현을</span>
+              <span className="text-accent">측정값이 아니라 흐름으로 구조화합니다</span>
             </h2>
-            <p className="mt-6 max-w-[560px] text-body-large">
-              ESE(Expression Sound Engine)는 율랩의 핵심 표현음 분석 엔진입니다.
-              기존의 음정·박자 중심 분석으로 포착하기 어려운 비정형 소리 요소를
-              분석하고, 시간에 따라 달라지는 표현의 흐름을 데이터화합니다.
-            </p>
+            <div className="tech-copy">
+              <p className="tech-copy-lead">
+                ESE(Expression Sound Engine)는 율랩의 표현 분석 엔진입니다. 기존 오디오
+                분석이 음정, 박자, 볼륨처럼 측정 가능한 값을 읽는다면, ESE는 말과 소리
+                안에서 <strong>시간에 따라 변하는 표현의 흐름</strong>을 읽습니다.
+              </p>
+              <p>
+                율랩은 이 흐름을 단순 감정 라벨이 아니라 분석·비교·피드백·생성에 연결할
+                수 있는 <strong>표현 구조</strong>로 바꿉니다. <strong>ESE는 그 구조를 만드는 표현 레이어입니다.</strong>
+              </p>
+            </div>
           </div>
-          <div className="grid items-stretch gap-4 sm:grid-cols-2">
-            {techCards.map((card, index) => (
-              <article className="surface-card" key={card.title}>
-                <div className="flex items-center justify-between gap-4">
-                  <span className="card-index">{String(index + 1).padStart(2, "0")}</span>
-                  <span className="card-label">{card.point}</span>
+          <div className="tech-pipeline" aria-label="ESE 기술 파이프라인">
+            {pipelineSteps.map((step, index) => (
+              <article className="tech-pipeline-node" key={step.number}>
+                <div className="tech-pipeline-meta">
+                  <span>{step.number}</span>
+                  <strong>{step.label}</strong>
                 </div>
-                <h3 className="mt-7 text-card-title font-bold text-primary">{card.title}</h3>
-                <p className="card-body mt-4">{card.body}</p>
+                <h3>{step.title}</h3>
+                <p>{step.body}</p>
+                {index < pipelineSteps.length - 1 ? <span className="tech-pipeline-connector" /> : null}
               </article>
             ))}
           </div>
@@ -167,55 +213,60 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section id="products" eyebrow="Products" tone="soft">
-        <div className="mb-10 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+      <Section id="products" eyebrow="Business / Products" tone="soft">
+        <div className="mb-10 flex flex-col justify-between gap-6 lg:flex-row lg:items-start">
           <h2 className="section-title max-w-[520px]">
-            <span>제품과 적용 분야</span>
+            <span>
+              <strong className="text-accent font-inherit">분석제품군</strong>과{" "}
+              <strong className="text-accent font-inherit">생성엔진</strong>
+            </span>
+            <span>으로 <strong className="text-accent font-inherit">확장</strong>됩니다</span>
           </h2>
-          <p className="max-w-[560px] text-body-large">
-            <span className="block">율랩의 기술은 하나의 앱에 머물지 않습니다.</span>
-            <span className="block">ESE를 기반으로 보컬, 국악, 음성, 교육, 콘텐츠 영역으로 확장되는 제품과 플랫폼을 만들어가고 있습니다.</span>
-          </p>
+          <div className="max-w-[580px] space-y-5 text-body-large">
+            <p>
+              율랩의 ESE는 하나의 앱에 머물지 않습니다. 한 축에서는 소리를 분석하고
+              비교하는 학습형 제품으로, 다른 한 축에서는 감정 표현이 가능한 AI Voice 엔진으로
+              확장됩니다.
+            </p>
+            <p>
+              분석 제품은 VOXGO, PansoriGo, 악기 학습 앱으로 이어지고, 생성 엔진은 TTS,
+              오디오북, 게임 NPC, AI Companion 등으로
+              연결됩니다.
+            </p>
+          </div>
         </div>
-        <div className="grid items-stretch gap-5 lg:grid-cols-3">
-          {products.map((product) => (
-            <article className="product-card" key={product.name}>
+        <div className="grid items-stretch gap-5 lg:grid-cols-2">
+          {businessCards.map((product) => (
+            <article
+              className={`product-card product-card-main ${product.isPlatform ? "product-card-platform lg:col-span-2" : ""}`}
+              key={product.title}
+            >
               <div className="product-line" />
-              <div className="flex items-center justify-between gap-4">
-                <p className="text-label font-bold text-accent">{product.label}</p>
-                <span className="product-meta">{product.meta}</span>
-              </div>
-              <h3 className="product-title">{product.name}</h3>
-              <p className="product-copy">
+              <p className="text-label font-bold text-accent">{product.label}</p>
+              <h3 className="product-title">{product.title}</h3>
+              <div className="product-copy product-copy-wide">
                 {product.lines.map((line) => (
-                  <span key={line}>{line}</span>
+                  <p key={line}>{line}</p>
                 ))}
-              </p>
-              <div className="mt-auto pt-7">
-                <p className="product-status">{product.status}</p>
               </div>
+              <div className="product-meta-list">
+                <p>
+                  <span>{product.metaLabel}</span>
+                  <strong>{product.metaValue}</strong>
+                </p>
+                <p>
+                  <span>{product.modelLabel}</span>
+                  <strong>{product.modelValue}</strong>
+                </p>
+              </div>
+              {product.isPlatform ? (
+                <a className="product-link-button" href={SORI_ON_URL} target="_blank" rel="noreferrer">
+                  제품 보기
+                </a>
+              ) : null}
             </article>
           ))}
         </div>
-        <article className="platform-band">
-          <div className="platform-band-content">
-            <div>
-              <p className="text-label font-bold text-accent">Platform</p>
-              <h3>SORI:ON</h3>
-              <p>
-                SORI:ON은 ESE 기반으로 만들어지는 분석 앱과 표현 AI 제품들을 연결하는
-                플랫폼입니다. VOXGO, PansoriGo, 그리고 앞으로 확장될 다양한 분석 앱을
-                하나의 구조 안에서 보여주는 율랩의 제품 허브입니다.
-              </p>
-            </div>
-            <div className="platform-band-side">
-              <span>ESE 기반 앱 플랫폼</span>
-              <a className="button-secondary button-compact" href={SORI_ON_URL} target="_blank" rel="noreferrer">
-                SORI:ON 홈페이지 보기
-              </a>
-            </div>
-          </div>
-        </article>
       </Section>
 
       <Section id="validation" eyebrow="Validation">
@@ -226,9 +277,14 @@ export default function Home() {
               <span className="text-accent">기반한 기술</span>
             </h2>
             <p className="mt-6 max-w-[560px] text-body-large">
-              율랩의 기술은 비정형 소리 분석, 국악 표현 분석, 보컬 표현 데이터 연구를
-              기반으로 발전해왔습니다. 실제 음원 비교와 표현 분석이 가능한 구조를
-              중심에 둡니다.
+              율랩의 ESE는 비정형 소리 분석, 표현 데이터 연구, 실제 음원 비교 구조를
+              바탕으로 발전해왔습니다.
+            </p>
+            <p className="mt-5 max-w-[560px] text-body-base text-body">
+              율랩은 감정을 단순히 라벨로 분류하는 대신, 말과 소리 안에서 시간에 따라
+              변하는 <strong className="text-accent font-semibold">표현의 구조와 흐름</strong>을
+              <strong className="text-accent font-semibold"> 읽고 비교 가능한 데이터</strong>로
+              바꾸는 기술을 중심에 두고 있습니다.
             </p>
           </div>
           <ol className="space-y-3">
@@ -236,9 +292,9 @@ export default function Home() {
               <li className="validation-row" key={item.title}>
                 <span className="validation-number">{item.number}</span>
                 <span className="validation-label">{item.label}</span>
-                <span className="validation-title">
-                  {item.title}
-                  {"meta" in item ? <span className="validation-meta">{item.meta}</span> : null}
+                <span className="validation-copy">
+                  <span className="validation-title">{item.title}</span>
+                  <span className="validation-meta">{item.body}</span>
                 </span>
               </li>
             ))}

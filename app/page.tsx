@@ -3,6 +3,8 @@ import { Section } from "@/components/section";
 import { SiteHeader } from "@/components/site-header";
 import { WaveMark } from "@/components/wave-mark";
 
+const SORI_ON_URL = "https://sori-on.com";
+
 const techCards = [
   {
     title: "호흡과 압력 분석",
@@ -96,6 +98,9 @@ export default function Home() {
                 문의하기
               </a>
             </div>
+            <a className="hero-sub-link" href="#products">
+              ESE 기반 제품 플랫폼 SORI:ON 보기 →
+            </a>
           </div>
 
           <div className="hidden lg:block">
@@ -168,8 +173,8 @@ export default function Home() {
             <span>제품과 적용 분야</span>
           </h2>
           <p className="max-w-[560px] text-body-large">
-            <span className="block">율랩의 제품은 하나의 앱에 머물지 않습니다.</span>
-            <span className="block">ESE를 기반으로 교육, 콘텐츠, 음성 경험 전반에 적용할 수 있는 표현 AI 제품군을 확장하고 있습니다.</span>
+            <span className="block">율랩의 기술은 하나의 앱에 머물지 않습니다.</span>
+            <span className="block">ESE를 기반으로 보컬, 국악, 음성, 교육, 콘텐츠 영역으로 확장되는 제품과 플랫폼을 만들어가고 있습니다.</span>
           </p>
         </div>
         <div className="grid items-stretch gap-5 lg:grid-cols-3">
@@ -192,6 +197,25 @@ export default function Home() {
             </article>
           ))}
         </div>
+        <article className="platform-band">
+          <div className="platform-band-content">
+            <div>
+              <p className="text-label font-bold text-accent">Platform</p>
+              <h3>SORI:ON</h3>
+              <p>
+                SORI:ON은 ESE 기반으로 만들어지는 분석 앱과 표현 AI 제품들을 연결하는
+                플랫폼입니다. VOXGO, PansoriGo, 그리고 앞으로 확장될 다양한 분석 앱을
+                하나의 구조 안에서 보여주는 율랩의 제품 허브입니다.
+              </p>
+            </div>
+            <div className="platform-band-side">
+              <span>ESE 기반 앱 플랫폼</span>
+              <a className="button-secondary button-compact" href={SORI_ON_URL} target="_blank" rel="noreferrer">
+                SORI:ON 홈페이지 보기
+              </a>
+            </div>
+          </div>
+        </article>
       </Section>
 
       <Section id="validation" eyebrow="Validation">

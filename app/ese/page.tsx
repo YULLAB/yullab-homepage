@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { SiteHeader } from "@/components/site-header";
 import { WaveMark } from "@/components/wave-mark";
 
+const SORI_ON_URL = "https://sori-on.com";
+
 export const metadata: Metadata = {
   title: "ESE | YULLAB Expression Sound Engine",
   description:
@@ -294,6 +296,42 @@ export default function EsePage() {
             </article>
           ))}
         </div>
+      </ESection>
+
+      <ESection
+        eyebrow="Products / Platform"
+        title="ESE는 실제 제품과 플랫폼으로"
+        accent="확장됩니다"
+        tone="soft"
+      >
+        <div className="ese-platform-copy">
+          <p>
+            율랩은 ESE를 단일 데모 기술로 두지 않습니다. 보컬, 국악, 음성 표현 분석 등
+            다양한 분석 앱과 AI 제품이 연결되는 구조로 확장하고 있습니다.
+          </p>
+          <p>
+            SORI:ON은 그 제품군을 모아 보여주는 ESE 기반 플랫폼입니다.
+          </p>
+        </div>
+        <article className="platform-band ese-platform-band">
+          <div className="platform-band-content">
+            <div>
+              <p className="text-label font-bold text-accent">SORI:ON</p>
+              <h3>SORI:ON</h3>
+              <p>
+                SORI:ON은 ESE 기반 분석 앱과 표현 AI 제품들을 연결하는 플랫폼입니다.
+                VOXGO, PansoriGo, 그리고 앞으로 확장될 다양한 분석 앱을 하나의 구조
+                안에서 보여주는 율랩의 제품 허브입니다.
+              </p>
+            </div>
+            <div className="platform-band-side">
+              <span>ESE 기반 앱 플랫폼</span>
+              <a className="button-secondary button-compact" href={SORI_ON_URL} target="_blank" rel="noreferrer">
+                SORI:ON 홈페이지 보기
+              </a>
+            </div>
+          </div>
+        </article>
       </ESection>
 
       <ESection eyebrow="Applications" title="ESE는 하나의 제품이 아니라" accent="여러 산업 위에 올라가는 표현 엔진입니다" tone="soft">

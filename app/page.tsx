@@ -1,5 +1,6 @@
 import { DataField } from "@/components/data-field";
 import { Section } from "@/components/section";
+import { SiteHeader } from "@/components/site-header";
 import { WaveMark } from "@/components/wave-mark";
 
 const techCards = [
@@ -69,27 +70,7 @@ const validation = [
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-ink text-primary">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-ink/76 backdrop-blur-2xl">
-        <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
-          <a href="#top" className="text-sm font-bold text-primary">
-            YULLAB
-          </a>
-          <div className="hidden items-center gap-7 text-sm font-medium text-muted md:flex">
-            <a href="#technology" className="transition hover:text-primary">
-              기술
-            </a>
-            <a href="#products" className="transition hover:text-primary">
-              제품
-            </a>
-            <a href="#validation" className="transition hover:text-primary">
-              연구 기반
-            </a>
-            <a href="#contact" className="transition hover:text-primary">
-              문의
-            </a>
-          </div>
-        </nav>
-      </header>
+      <SiteHeader />
 
       <section id="top" className="relative min-h-[88svh] pt-16">
         <DataField />

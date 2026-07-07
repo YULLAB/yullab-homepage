@@ -248,6 +248,138 @@ body {
   .company-info a {
     @apply transition hover:text-accent;
   }
+
+  .ese-hero {
+    @apply relative min-h-[86svh] overflow-hidden border-b border-line;
+  }
+
+  .ese-hero-title {
+    @apply flex max-w-4xl flex-col text-primary;
+    font-size: clamp(2.35rem, 5vw, 4.8rem);
+    font-weight: 800;
+    line-height: 1.14;
+    letter-spacing: -0.035em;
+  }
+
+  .ese-section {
+    @apply border-t border-line py-20 lg:py-[110px];
+    background:
+      radial-gradient(circle at 88% 0%, rgba(88, 76, 150, 0.045), transparent 30%),
+      #0d0e14;
+  }
+
+  .ese-section-soft {
+    background:
+      radial-gradient(circle at 12% 0%, rgba(70, 80, 130, 0.052), transparent 32%),
+      #11111a;
+  }
+
+  .ese-title {
+    @apply mt-5 flex max-w-4xl flex-col text-title;
+    font-size: clamp(2rem, 3.8vw, 3.3rem);
+    font-weight: 800;
+    line-height: 1.18;
+    letter-spacing: -0.03em;
+  }
+
+  .ese-lead {
+    @apply mt-7 max-w-3xl text-body-large;
+  }
+
+  .ese-two-col {
+    @apply mt-12 grid gap-8 lg:grid-cols-[1fr_0.72fr] lg:gap-16;
+  }
+
+  .ese-mini-card,
+  .ese-flow-card,
+  .ese-param-card,
+  .ese-detail-card,
+  .ese-app-card,
+  .ese-quote-card,
+  .ese-layer-card {
+    @apply rounded-[24px] border border-white/[0.08] bg-white/[0.035] shadow-violet;
+    background-image:
+      linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.028)),
+      radial-gradient(circle at 18% 0%, rgba(96,98,132,0.038), transparent 42%);
+  }
+
+  .ese-mini-card {
+    @apply min-h-24 p-4 text-sm font-semibold leading-6 text-body;
+  }
+
+  .ese-quote-card {
+    @apply flex min-h-64 flex-col justify-center gap-5 p-8 text-[clamp(1.25rem,2vw,1.7rem)] font-bold leading-snug text-title;
+  }
+
+  .ese-flow {
+    @apply mt-12 grid gap-4 lg:grid-cols-5;
+  }
+
+  .ese-flow-card {
+    @apply relative min-h-52 p-5;
+  }
+
+  .ese-flow-card span,
+  .ese-card-label {
+    @apply text-xs font-bold text-accent;
+  }
+
+  .ese-flow-card h3,
+  .ese-param-card h3,
+  .ese-detail-card h3,
+  .ese-app-card h3 {
+    @apply mt-4 text-[clamp(1.12rem,1.4vw,1.35rem)] font-bold leading-snug text-title;
+  }
+
+  .ese-flow-card p,
+  .ese-param-card p,
+  .ese-detail-card p,
+  .ese-app-card p {
+    @apply mt-4 text-[0.98rem] leading-[1.7] text-body;
+  }
+
+  .ese-note {
+    @apply mt-8 max-w-3xl text-body-base text-subtle;
+  }
+
+  .ese-param-grid {
+    @apply mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4;
+  }
+
+  .ese-param-card {
+    @apply min-h-40 p-5;
+  }
+
+  .ese-card-grid {
+    @apply mt-12 grid gap-5 lg:grid-cols-3;
+  }
+
+  .ese-detail-card {
+    @apply min-h-64 p-7;
+  }
+
+  .ese-layer-card {
+    @apply flex min-h-64 flex-col justify-center gap-5 p-8 text-[clamp(1.25rem,2vw,1.7rem)] font-bold text-title;
+  }
+
+  .ese-app-grid {
+    @apply mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3;
+  }
+
+  .ese-app-card {
+    @apply min-h-44 p-6;
+  }
+
+  .ese-faq-grid {
+    @apply mt-12 grid gap-5 lg:grid-cols-3;
+  }
+
+  .ese-cta {
+    @apply relative border-t border-line py-20 lg:py-[110px];
+    background:
+      radial-gradient(circle at 50% 0%, rgba(183,164,255,0.065), transparent 30%),
+      #11111a;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
